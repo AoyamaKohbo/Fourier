@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="ja">
+
+  <head>
+    <script type="text/x-mathjax-config">
+
+       MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"AMS"}}});
+
+    </script>
+
+    <script type="text/javascript" async 
+
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+
+    </script>
+
+  </head>
+
+  <body>
+    <h3>Fourier(フーリエ)級数とFourier変</h3>
+    <h3>§Fourier級数</h3>
+
+    <p>時間関数\(f(t)\)をサンプリング周波数\(f_S\)[Hz]で\(2n\)個サンプルする場合のFourier級数は次式となります。</p>
+    \begin{align}
+      f(t) = \frac{a_0}{2}+\sum_{k=1}^n\{a(k)\cos 2\pi\frac{f_Sk}{n} t + b(k)\sin \frac{2\pi f_Sk}{n} t\}\label{eq:Fourierseries}
+    \end{align}
+
+    <p>\(a(k)\)、\(b(k)\)はそれぞれ周期関数\(\cos 2\pi f_S\frac{k}{n} t\)、\(\sin 2\pi f_S\frac{k}{n} t\)の振幅です。
+      \(\sqrt{a(k)^2+b(k)^2}\)は振動数\(f_S k/n\)[Hz]の成分の大きさとなります。</p>
+
+    <h3>§Fourier変換</h3>
+    <p>Fourier級数\eqref{eq:Fourierseries}の振幅\(a(k)\)と\(b(k)\)は次式のFourier変換で計算できます。</p>
+    \begin{align}
+      a(k) = \frac{n}{f_S}\int_0^{2n/f_S}f(t)\cos 2\pi \frac{f_S k}{n}t ~dt\label{eq:FourierTrans1}\\
+      b(k) = \frac{n}{f_S}\int_0^{2n/f_S}f(t)\sin 2\pi \frac{f_S k}{n}t ~dt\label{eq:FourierTrans2}     
+    \end{align}
+
+   <p><a href="https://aoyamakohbo.github.io/Craftlogy/">->TOP</a></p>
+</body>
+
+</html>
