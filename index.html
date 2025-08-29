@@ -21,21 +21,23 @@
     <h3>Fourier(フーリエ)級数とFourier変換</h3>
     <h3>§Fourier級数</h3>
 
-    <p>時間関数\(f(t)\)をサンプリング周波数\(f_S\)[Hz]で\(2n\)個サンプルする場合のFourier級数は次式となります。</p>
+    <p>時間関数\(f(t)\)をサンプリング周波数\(f_S\)[Hz](\(\omega_S=2\pi f_S\))で\(N=2n\)個サンプルする場合のFourier級数は次式となります。</p>
     \begin{align}
-      f(t) = \frac{a(0)}{2}+\sum_{k=1}^n\{a(k)\cos 2\pi\frac{k}{2n} f_St + b(k)\sin 2\pi\frac{k}{2n} f_St\}\label{eq:Fourierseries}
+      f(t) = \frac{a(0)}{2}+\sum_{k=1}^n\{a(k)\cos \frac{k}{N} \omega_S t + b(k)\sin \frac{k}{N} \omega_St \}\label{eq:Fourierseries}
     \end{align}
 
-    <p>\(a(k)\)、\(b(k)\)はそれぞれ周期関数\(\cos 2\pi\displaystyle\frac{k}{2n} f_S t\)、
-      \(\sin 2\pi\displaystyle\frac{k}{2n} f_S t\)の振幅です。
-      \(\sqrt{a(k)^2+b(k)^2}\)は振動数\(\displaystyle\frac{k}{2n} f_S\)[Hz](\(k=1,\cdots,n\))の振動成分の大きさとなります。</p>
+    <p>\(a(k)\)、\(b(k)\)はそれぞれ周期関数\(\cos \displaystyle \frac{k}{N} \omega_S t\)、
+      \(\sin  \displaystyle \frac{k}{N} \omega_S t\)の振幅です。
+      \(\sqrt{a(k)^2+b(k)^2}\)は振動数\(\displaystyle\frac{k}{N} \omega_S\)[Hz](\(k=1,\cdots,n\))の振動成分の大きさとなります。</p>
 
     <h3>§Fourier変換</h3>
     <p>Fourier級数\eqref{eq:Fourierseries}の振幅\(a(k)\)と\(b(k)\)は次式のFourier変換で計算できます。</p>
     \begin{align}
-      a(k) = \frac{f_S}{n}\int_0^{2n/f_S}f(t)\cos 2\pi \frac{k}{2n}f_S t ~dt~~(k=0,\cdots,n)\label{eq:FourierTrans1}\\
-      b(k) = \frac{f_S}{n}\int_0^{2n/f_S}f(t)\sin 2\pi \frac{k}{2n}f_S t ~dt~~(k=1,\cdots,n)\label{eq:FourierTrans2}     
+      a(k) = \frac{f_S}{n}\int_0^{N/f_S}f(t)\cos \frac{k}{N} \omega_S t ~dt~~(k=0,\cdots,n)\label{eq:FourierTrans1}\\
+      b(k) = \frac{f_S}{n}\int_0^{N/f_S}f(t)\sin \frac{k}{N} \omega_S t ~dt~~(k=1,\cdots,n)\label{eq:FourierTrans2}     
     \end{align}
+
+    <p>Fourier変換にはFFT(Fast Fourier Tranformation)アルゴリズムを使用します。</p>
 
    <p><a href="https://aoyamakohbo.github.io/Craftlogy/">->TOP</a></p>
 </body>
